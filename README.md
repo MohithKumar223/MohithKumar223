@@ -56,7 +56,7 @@
 ---
 
 ### 🕵️ Fake Profile Detection System
-🔗 Repo: https://github.com/MohithKumar223/Fake-Profile-Detection-System
+
 
 - Machine Learning + NLP based social media profile analyzer
 - Built with Flask, React, and MySQL

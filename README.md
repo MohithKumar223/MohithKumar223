@@ -1,107 +1,75 @@
-## Hi there 👋
+🧑‍💻 About Me
+
+I'm a Computer Science undergraduate at T John Institute of Technology, Bengaluru (graduating 2027), with a CGPA of 8.27. I build full-stack applications that solve real problems — from cybersecurity tools to AI-powered systems.
+
+I'm currently sharpening my skills in backend development, machine learning integration, and cloud fundamentals, while actively contributing to open source through SSOC'25.
 
 
----
-
-## 🚀 About Me
-
-- 🎓 B.E. Computer Science & Engineering Student  
-- 💻 Passionate about Full Stack Development and AI Systems  
-- 🌱 Currently learning **Generative AI, System Design, and Cloud Technologies**  
-- 🔭 Building projects in **AI, Web Development, and Cybersecurity**  
-- ⚡ Strong interest in scalable software systems and modern development workflows  
-
----
-
-## 🛠️ Tech Stack
-
-### 💻 Languages
-<p>
-  <img src="https://skillicons.dev/icons?i=java,python,javascript,php" />
-</p>
-
-### 🌐 Frontend
-<p>
-  <img src="https://skillicons.dev/icons?i=html,css,bootstrap,react" />
-</p>
-
-### ⚙️ Backend & Database
-<p>
-  <img src="https://skillicons.dev/icons?i=nodejs,flask,mysql" />
-</p>
-
-### 🧰 Tools & Platforms
-<p>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,firebase" />
-</p>
-
----
-
-## 📌 Featured Projects
-
-### 🔐 Shadow-Hash
-> Secure password hashing and authentication system focused on cybersecurity.
-
-- Implemented secure authentication mechanisms
-- Enhanced password security using hashing techniques
-
----
-
-### 🤖 Multimodal AI Debate System
-> AI-powered debate platform where multiple models generate and evaluate arguments.
-
-- Developed backend logic using Node.js
-- Built conclusion-generation workflow using AI models
-
----
-
-### 🕵️ Fake Profile Detection System
+🔭 Currently working on: AI-powered and security-focused web applications
+🌱 Actively learning: Node.js, Cloud Architecture, NoSQL Databases
+💬 Ask me about: Java, Python, Flask, React, MySQL
+📍 Based in: Bengaluru, Karnataka, India
 
 
-- Machine Learning + NLP based social media profile analyzer
-- Built with Flask, React, and MySQL
-- Detects and classifies suspicious user profiles
 
----
+🚀 Featured Projects
 
-## 📈 GitHub Stats
+🔐 Shadow-Hash
+
+
+Cybersecurity · Authentication Systems
+
+
+
+A secure password hashing and authentication tool built with a focus on data protection. Implemented encryption techniques to strengthen user credential security at the core level.
+
+
+🤖 Multimodal AI Debate System
+
+
+Node.js · AI Models
+
+
+
+A system where multiple AI models debate a topic and synthesize conclusions autonomously. Engineered the backend logic for argument evaluation and response generation across models.
+
+
+🕵️ Fake Profile Detection System
+
+
+Python · Flask · MySQL · React · Machine Learning · NLP
+
+
+
+End-to-end system to detect fake social media profiles using ML and NLP. Features a Flask backend, MySQL database integration, and a clean React interface for profile analysis and classification.
+
+
+🛠️ Tech Stack
+
+AreaTechnologiesLanguagesJava · Python · JavaScript · PHPFrontendReact · HTML5 · CSS3 · BootstrapBackendFlask · Node.jsDatabaseMySQLCloudGoogle Cloud (ADK) · Microsoft Azure (AZ-900)ToolsGit · VS Code · EclipseConceptsOOP · DBMS · Agile · REST APIs
+
+
+📜 Certifications
+
+CertificationIssuerYearEngineer AI Agents with Agent Development Kit (ADK)Google Cloud Skills Boost2026Introduction to NoSQL DatabasesInfosys Springboard2026Software Engineering & Agile DevelopmentInfosys Springboard2026Object Oriented Programming using PythonInfosys Springboard2026Java ProgrammingInfosys Springboard—Azure Fundamentals (AZ-900)Microsoft—Data Science with PythonNPTEL—Web DevelopmentInternshala—
+
+
+📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=MohithKumar223&show_icons=true&theme=tokyonight" />
+  <img src="https://github-readme-stats.vercel.app/api?username=MohithKumar223&show_icons=true&theme=tokyonight&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohithKumar223&layout=compact&theme=tokyonight&hide_border=true" width="48%" />
 </p>
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MohithKumar223&theme=tokyonight&hide_border=true" width="60%" />
+</p>
+
+🤝 Let's Connect
+
+If you're building something interesting or looking for a motivated developer to collaborate with — I'm open to it.
+
+📧 mmohit0272@gmail.com · 📍 Bengaluru, India
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MohithKumar223&theme=tokyonight" />
+  <i>"Code is not just syntax — it's a solution waiting to be discovered."</i>
 </p>
-
----
-
-## 🏆 Certifications
-
-- Infosys Springboard — Java Programming  
-- NPTEL — Data Science with Python  
-- Internshala — Web Development  
-- Microsoft Azure Fundamentals (AZ-900)  
-
----
-
-## 📫 Connect With Me
-
-<p>
-  <a href="https://www.linkedin.com/in/mohithkumar-dev/">
-    <img src="https://skillicons.dev/icons?i=linkedin" />
-  </a>
-  
-  <a href="mailto:mmohit0272@gmail.com">
-    <img src="https://skillicons.dev/icons?i=gmail" />
-  </a>
-  
-  <a href="https://github.com/MohithKumar223">
-    <img src="https://skillicons.dev/icons?i=github" />
-  </a>
-</p>
-
----
-
-<h3 align="center">💡 "Code. Learn. Build. Repeat."</h3>
--->

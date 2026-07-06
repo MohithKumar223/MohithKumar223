@@ -17,7 +17,7 @@
 
 ## 🚀 About Me
 
-I'm a **Computer Science undergraduate** at **T John Institute of Technology, Bengaluru**, graduating in **2027** with a **CGPA of 8.27**.
+I'm a **Computer Science undergraduate** at **T John Institute of Technology, Bengaluru**, graduating in **2027** with a **CGPA of 8.38**.
 
 I’m passionate about building **full-stack applications** that solve real-world problems, especially in the areas of **web development, cybersecurity, and AI-powered systems**. I enjoy turning ideas into scalable, practical solutions while continuously improving my backend, cloud, and problem-solving skills.
 

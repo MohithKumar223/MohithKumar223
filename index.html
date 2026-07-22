@@ -1,63 +1,587 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Placeholder Landing — Coming Soon</title>
-		<link rel="stylesheet" href="styles.css">
-		<meta name="description" content="Temporary landing page placeholder" />
-	</head>
-	<body>
-		<header class="site-header">
-			<div class="container header-inner">
-				<div class="logo">Mohith</div>
-				<nav class="nav">
-					<a href="#features">Features</a>
-					<a href="#subscribe">Subscribe</a>
-				</nav>
-			</div>
-		</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohith Kumar H M – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<main>
-			<section class="hero">
-				<div class="container hero-inner">
-					<h1>Something great is coming</h1>
-					<p class="lead">We're building something useful. This is a temporary placeholder landing page.</p>
-					<div class="actions">
-						<button id="primary-cta" class="btn">Notify Me</button>
-						<a class="btn ghost" href="#subscribe">Join Waitlist</a>
-					</div>
-				</div>
-			</section>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111;
+      --border: #222;
+      --accent: #00ff88;
+      --accent2: #0af;
+      --text: #e8e8e8;
+      --muted: #666;
+    }
 
-			<section id="features" class="features container">
-				<h2>Key Highlights</h2>
-				<ul class="feature-list">
-					<li><strong>Fast:</strong> Lightweight placeholder content.</li>
-					<li><strong>Responsive:</strong> Works on phones and desktops.</li>
-					<li><strong>Customizable:</strong> Swap in real copy and assets.</li>
-				</ul>
-			</section>
+    html { scroll-behavior: smooth; }
 
-			<section id="subscribe" class="subscribe">
-				<div class="container">
-					<h3>Join the waitlist</h3>
-					<form id="subscribe-form" class="subscribe-form">
-						<input type="email" id="email" placeholder="you@example.com" required />
-						<button class="btn" type="submit">Join</button>
-					</form>
-					<p class="muted">We won't spam — this is just to notify you when we launch.</p>
-				</div>
-			</section>
-		</main>
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
 
-		<footer class="site-footer">
-			<div class="container">
-				<small>© <span id="year"></span> Placeholder — Built with ❤️</small>
-			</div>
-		</footer>
+    /* NOISE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
 
-		<script src="script.js"></script>
-	</body>
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--accent);
+      letter-spacing: 3px;
+    }
+
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 2.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,136,0.08), transparent 70%);
+      top: 10%; right: -10%;
+      pointer-events: none;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 14px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.92;
+      letter-spacing: 4px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.25s forwards;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .hero-name-serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--muted);
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.35s forwards;
+    }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      max-width: 540px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.4s forwards;
+    }
+
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.55s forwards;
+    }
+
+    .btn {
+      padding: 0.75rem 1.8rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: #00cc6a; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* SECTIONS */
+    section { padding: 6rem 2.5rem; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      letter-spacing: 3px;
+      margin-bottom: 3rem;
+      line-height: 1;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #999;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+    .stat-box {
+      background: var(--surface);
+      padding: 1.5rem;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      display: block;
+    }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* SKILLS */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .skill-tag {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      transition: all 0.2s;
+      cursor: default;
+    }
+    .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,255,136,0.05); }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+    }
+    .project-card {
+      background: var(--surface);
+      padding: 2rem;
+      transition: background 0.2s;
+    }
+    .project-card:hover { background: #161616; }
+    .project-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+    .project-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+    .project-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .project-tags span {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      background: rgba(0,255,136,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(0,255,136,0.2);
+    }
+
+    /* EDUCATION & CERTS */
+    .timeline { display: flex; flex-direction: column; gap: 2rem; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .timeline-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      padding-top: 4px;
+    }
+    .timeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.3px;
+    }
+    .timeline-sub {
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* CONTACT */
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      max-width: 600px;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background: var(--surface);
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+    .contact-link:hover { background: #161616; color: var(--accent); }
+    .contact-link span:last-child {
+      font-family: 'DM Mono', monospace;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1rem; }
+      section { padding: 4rem 1.2rem; }
+      #hero { padding: 7rem 1.2rem 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">MK.ME</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="tag">Available for Opportunities</div>
+  <h1>Mohith<br/><span>Kumar</span> H M</h1>
+  <p class="hero-name-serif">Computer Science Engineer in the Making</p>
+  <p class="hero-sub">Full-Stack Web Developer · IoT & AI Enthusiast · Bengaluru, Karnataka</p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="https://github.com/MohithKumar223" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/mohith-kumar-h-m-3a5ab627b/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">01 — About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Building Things<br/>That Matter</h2>
+      <p>I'm a second-year Computer Science student at T John Institute of Technology, Bengaluru, with a strong passion for full-stack development, embedded systems, and AI-driven solutions.</p>
+      <p>I've worked across the stack — from crafting responsive UIs to building backend APIs, and even integrating IoT sensors with AI models to solve real-world agricultural challenges.</p>
+      <p>Currently seeking internship and project opportunities where I can contribute and grow as an engineer.</p>
+      <div class="skills-list">
+        <span class="skill-tag">HTML / CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">Bootstrap</span>
+        <span class="skill-tag">Core Java</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Git & GitHub</span>
+        <span class="skill-tag">Arduino / IoT</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Azure (AZ-900)</span>
+      </div>
+    </div>
+    <div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-num">8.38</span>
+          <span class="stat-label">Current CGPA</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">8wk</span>
+          <span class="stat-label">Web Dev Training</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">02 — Projects</div>
+  <h2>Things I've<br/>Built</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-num">001</div>
+      <div class="project-title">Multimodel AI Debate System</div>
+      <p class="project-desc">A platform where two AI models debate opposing arguments on a given topic and a third AI model analyzes both sides to deliver a final verdict. Built with Node.js and modern frontend technologies.</p>
+      <div class="project-tags">
+        <span>Node.js</span><span>JavaScript</span><span>AI</span><span>Full-Stack</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">002</div>
+      <div class="project-title">Smart Agriculture IoT System</div>
+      <p class="project-desc">IoT Hackathon project integrating real-time field sensors and satellite data with AI models to analyze environmental conditions and recommend crop suitability for farmers.</p>
+      <div class="project-tags">
+        <span>IoT</span><span>AI/ML</span><span>Sensors</span><span>Agriculture</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">003</div>
+      <div class="project-title">Smart Parking System</div>
+      <p class="project-desc">Developed during the Innovation & Design Thinking Program at ComedKares Hub. Used Arduino IDE and embedded system concepts to design an automated smart parking management solution.</p>
+      <div class="project-tags">
+        <span>Arduino</span><span>Embedded Systems</span><span>IoT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTS -->
+<section id="education">
+  <div class="section-label">03 — Education & Certifications</div>
+  <h2>Learning<br/>Journey</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">2023 – 2027</div>
+      <div class="timeline-content">
+        <div class="timeline-title">B.E. in Computer Science</div>
+        <div class="timeline-sub">T John Institute of Technology, Bengaluru · CGPA: 8.27</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2021 – 2023</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Science – PCMC (PUC)</div>
+        <div class="timeline-sub">St Francis de Sales PU College, Bengaluru · 82%</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Cert</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Microsoft Azure Fundamentals (AZ-900)</div>
+        <div class="timeline-sub">Microsoft · Cloud Computing Fundamentals</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Cert</div>
+      <div class="timeline-content">
+        <div class="timeline-title">NPTEL – Data Science with Python</div>
+        <div class="timeline-sub">NPTEL Online Certification</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Cert</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Web Development</div>
+        <div class="timeline-sub">Internshala Trainings · 8-week program covering HTML, CSS, JS, PHP, React, DBMS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">04 — Contact</div>
+  <h2>Let's<br/>Connect</h2>
+  <div class="contact-links">
+    <a href="mailto:mmohit0272@gmail.com" class="contact-link">
+      <span>mmohit0272@gmail.com</span>
+      <span>↗</span>
+    </a>
+    <a href="tel:+916361699223" class="contact-link">
+      <span>+91 636 169 9223</span>
+      <span>↗</span>
+    </a>
+    <a href="https://www.linkedin.com/in/mohith-kumar-h-m-3a5ab627b/" target="_blank" class="contact-link">
+      <span>LinkedIn Profile</span>
+      <span>↗</span>
+    </a>
+    <a href="https://github.com/MohithKumar223" target="_blank" class="contact-link">
+      <span>GitHub Profile</span>
+      <span>↗</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Mohith Kumar H M</span>
+  <span>Built with HTML · CSS · JS</span>
+</footer>
+
+</body>
 </html>
-
